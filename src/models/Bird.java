@@ -1,23 +1,23 @@
 package models;
 
+import config.GameConfiguration;
+
 public class Bird {
 
-    private final int x;
-    private final int y;
+    private Position position;
     private final int size;
 
-    public Bird(int x, int y, int size) {
-        this.x = x;
-        this.y = y;
+    public Bird(Position position, int size) {
+        this.position = position;
         this.size = size;
     }
 
-    public int getX() {
-        return x;
+    public Position getPosition() {
+        return position;
     }
 
-    public int getY() {
-        return y;
+    public void setPosition(Position position) {
+        this.position = position;
     }
 
     public int getSize() {
@@ -27,8 +27,7 @@ public class Bird {
     @Override
     public String toString() {
         return "Bird{" +
-                "x=" + x +
-                ", y=" + y +
+                "position=" + position.toString() +
                 ", size=" + size +
                 '}';
     }
