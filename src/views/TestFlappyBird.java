@@ -1,13 +1,12 @@
 package views;
 
-import javax.swing.*;
+import controllers.GameController;
 
 public class TestFlappyBird {
 
     public static void main(String[] args) {
-        MainGUI app = new MainGUI();
-        Thread appThread = new Thread(app);
-        appThread.start();
+        GameViewable view = new MainGUI();
+        GameController controller = new GameController(view);
+        controller.run();
     }
-
 }

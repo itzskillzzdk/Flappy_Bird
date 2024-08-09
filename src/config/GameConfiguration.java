@@ -1,5 +1,7 @@
 package config;
 
+import models.Position;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -14,11 +16,15 @@ public class GameConfiguration {
     public final static Dimension BACKGROUND_DIMENSION = new Dimension(WINDOW_WIDTH, 4 * WINDOW_HEIGHT / 5);
     public final static Dimension GROUND_DIMENSION = new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT / 5);
 
+    public static final Position BACKGROUND_POSITION = new Position(0, 0);
+    public static final Position GROUND_POSITION = new Position(0, (4 * WINDOW_HEIGHT / 5) + 1);
+
     public final static String BACKGROUND_IMG_PATH = "src/images/backgrounds/minecraft.png";
     public final static String GROUND_IMG_PATH = "src/images/grounds/minecraft.png";
     public final static Image BACKGROUND_IMG = new ImageIcon(BACKGROUND_IMG_PATH).getImage();
     public final static Image GROUND_IMG = new ImageIcon(GROUND_IMG_PATH).getImage();
     public final static int BACKGROUND_WIDTH = BACKGROUND_IMG.getWidth(null);
+    public final static int GROUND_WIDTH = GROUND_IMG.getWidth(null);
 
     public final static int BIRD_SIZE = 64;
 

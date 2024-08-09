@@ -7,16 +7,21 @@ import static config.GameConfiguration.*;
 
 public class GroundPanel extends JPanel {
 
-    private Image groundImage;
+    private Image groundImg;
+    private int xPosGround;
 
     public GroundPanel() {
-        groundImage = GROUND_IMG;
+        groundImg = GROUND_IMG;
         setPreferredSize(GROUND_DIMENSION);
     }
 
-    public Image getGroundImg() { return groundImage; }
+    public Image getGroundImg() { return groundImg; }
 
-    public void setGroundImg(Image groundImg) { this.groundImage = groundImg; }
+    public void setGroundImg(Image groundImg) { this.groundImg = groundImg; }
+
+    public int getXPosGround() { return xPosGround; }
+
+    public void setXPosGround(int xPosBackground) { this.xPosGround = xPosBackground; }
 
     @Override
     protected void paintComponent(Graphics g) {
@@ -26,7 +31,8 @@ public class GroundPanel extends JPanel {
     }
 
     private void drawGround(Graphics2D g2d) {
-        Image groundImg = getGroundImg();
-        g2d.drawImage(groundImg, 0, 0, null);
+        if(xPosGround == -GROUND_WIDTH) { xPosGround = 0; }
+        g2d.drawImage(groundImg, xPosGround, 0, null);
+        g2d.drawImage(groundImg, xPosGround + GROUND_WIDTH, 0, null);
     }
 }

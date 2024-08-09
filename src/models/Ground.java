@@ -1,6 +1,9 @@
 package models;
 
+import static config.GameConfiguration.WINDOW_HEIGHT;
+
 public class Ground {
+
     private Position position;
     private int width;
     private int height;

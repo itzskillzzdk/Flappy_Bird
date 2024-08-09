@@ -12,7 +12,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class GameView extends JFrame implements Runnable, GameViewable {
+public class MainGUI extends JFrame implements Runnable, GameViewable {
 
     public static final int BACKGROUND_SCROLLING_SPEED = 10;
     public static final int GROUND_SCROLLING_SPEED = 10;
@@ -20,7 +20,7 @@ public class GameView extends JFrame implements Runnable, GameViewable {
     private GameController gc;
     private GamePanel gamePanel = new GamePanel();
 
-    public GameView(){
+    public MainGUI(){
         super("Flappy Bird");
 
         // We need to set the size of the contentPane and not the frame because of the frame insets take extra 8 pixels and so hide some part of the container in the frame.
@@ -61,7 +61,7 @@ public class GameView extends JFrame implements Runnable, GameViewable {
 
     @Override
     public void launch() {
-        GameView gv = this;
+        MainGUI gv = this;
         Thread appThread = new Thread(gv);
         appThread.start();
     }

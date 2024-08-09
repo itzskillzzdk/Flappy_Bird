@@ -1,11 +1,7 @@
 package views.panels;
 
-import config.GameConfiguration;
-import views.MainGUI;
-
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 
 import static config.GameConfiguration.*;
 
